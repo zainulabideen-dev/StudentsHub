@@ -2,8 +2,9 @@ import { View, Image, Text, StyleSheet, FlatList, TouchableOpacity, Modal } from
 import React, {useState} from 'react'
 import SafeAreaComp from '../component/SafeAreaComp'
 import UpdateProfileModal from '../modals/UpdateProfileModal'
+import { APP_STRINGS } from '../helper/appStrings'
 
-function ProfileScreen() {
+function ProfileScreen({navigation}) {
 
   const [show, setShow] = useState(false)
 
@@ -26,7 +27,26 @@ function ProfileScreen() {
   }
 
   function handlePress(item){
-    setShow(true)
+    if(item.name == 'Update Profile'){
+      setShow(true)
+    }else if(item.name == 'Logout'){
+      openLogOutDialog()
+    }else if(item.name == 'My Uploads'){
+      navigation.navigate(APP_STRINGS.screens.home)
+    }
+  }
+
+  function openLogOutDialog(){
+    Alert.alert('Logout', 'Are you sure you want to logout', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('cancel')
+      },
+      {
+        text: 'Ok',
+        onPress: () => console.log('logout')
+      }
+    ])
   }
 
   return (

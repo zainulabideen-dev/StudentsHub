@@ -4,6 +4,7 @@ export const APP_STRINGS = {
         welcome: 'welcome-screen',
         siginIn: 'signin-screen',
         signUp: 'signup-screen',
-        dashboard: 'dashboard-screen'
+        dashboard: 'dashboard-screen',
+        home: 'home'
     }
 }

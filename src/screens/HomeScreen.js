@@ -1,14 +1,17 @@
 import React from 'react'
-import { View, Text, StyleSheet, Image, TextInput} from 'react-native'
+import { View, Text, StyleSheet, Image, TextInput, TouchableOpacity} from 'react-native'
 import SafeAreaComp from '../component/SafeAreaComp';
 import SeachListComp from '../component/SeachListComp';
 
-function HomeScreen() {
+function HomeScreen({navigation}) {
   return (
     <SafeAreaComp>
       <View style={styles.header}>
         <View style={{flex: 0.8}}>
-          <Text style={{fontSize: 17}}>Hello</Text>
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Image style={{width: 30, height: 30}} source={require('../assets/back.png')} />
+          </TouchableOpacity>
+          <Text style={{fontSize: 17, marginTop: 10}}>Hello</Text>
           <Text style={styles.name}>Zain Ul Abideen</Text>
         </View>
         <View style={{flex: 0.2, alignItems: 'center'}}>

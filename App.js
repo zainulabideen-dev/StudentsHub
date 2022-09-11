@@ -7,6 +7,7 @@ import SignInScreen from './src/screens/SignInScreen';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import SignUpScreen from './src/screens/SignUpScreen'
 import DashboardScreen from './src/screens/DashboardScreen'
+import HomeScreen from './src/screens/HomeScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,9 @@ const App = () => {
         options={{headerShown: false,}}/>
 
         <Stack.Screen name={APP_STRINGS.screens.dashboard} component={DashboardScreen}
+        options={{headerShown: false,}}/>
+
+        <Stack.Screen name={APP_STRINGS.screens.home} component={HomeScreen}
         options={{headerShown: false,}}/>
 
       </Stack.Navigator>
